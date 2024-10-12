@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Cotações</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Gestão de Cotações</h1>
+
+    <div class="form-container">
+    <h2>Adicionar Produto</h2>
+    <form id="addProductForm">
+        <input type="text" id="productPN" placeholder="PN (Part Number)" required>
+        <input type="text" id="productDescription" placeholder="Descrição do Produto" required>
+        <input type="number" id="productQuantity" placeholder="Quantidade" required>
+        <input type="text" id="productUnit" placeholder="Unidade (ex: Kg, Un, etc)" required>
+        <input type="number" step="0.01" id="productLastQuote" placeholder="Valor do Último Orçamento" required>
+        
+        <!-- Fornecedor 1 -->
+        <input type="text" id="productSupplier1" placeholder="Fornecedor 1" required>
+        <input type="number" step="0.01" id="productPriceSupplier1" placeholder="Valor Fornecedor 1" required>
+        
+        <!-- Fornecedor 2 -->
+        <input type="text" id="productSupplier2" placeholder="Fornecedor 2" required>
+        <input type="number" step="0.01" id="productPriceSupplier2" placeholder="Valor Fornecedor 2" required>
+
+        <!-- Fornecedor 3 -->
+        <input type="text" id="productSupplier3" placeholder="Fornecedor 3" required>
+        <input type="number" step="0.01" id="productPriceSupplier3" placeholder="Valor Fornecedor 3" required>
+
+        <button type="submit">Adicionar</button>
+    </form>
+</div>
+   <div class="inventory-container">
+    <h2>Estoque</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>PN</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Unidade</th>
+                <th>Valor do Último Orçamento</th>
+                <th>Fornecedor 1</th>
+                <th>Valor Fornecedor 1</th>
+                <th>Fornecedor 2</th>
+                <th>Valor Fornecedor 2</th>
+                <th>Fornecedor 3</th>
+                <th>Valor Fornecedor 3</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="inventoryTable">
+            <!-- Produtos aparecerão aqui -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js"></script>
+<script src="/static/script.js"></script>
+</body>
+</html>
